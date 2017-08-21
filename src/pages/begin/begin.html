@@ -1,0 +1,27 @@
+<ion-content style="background-image:url('assets/images/login.jpg');">
+  <!--<img src="assets/images/login.jpg" style="width:100%;height:100%;" />-->
+  <ion-grid>
+    <ion-row style="margin-top:35%;background: transparent;">
+      <ion-col style="background: transparent;">
+        <ion-list style="background: transparent;">
+          <ion-item style="border-top:none;padding-left:0px;background:transparent;">
+            <ion-label floating text-center>UserName</ion-label>
+            <ion-input [(ngModel)]=username></ion-input>
+          </ion-item>
+          <ion-item style="padding-left:0px;background: transparent;">
+            <ion-label floating text-center>Password</ion-label>
+            <ion-input [(ngModel)]=password></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button full (click)="sendToRegister()" style="background-color:#999;">SignIn</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full (click)="sendToRegister()" style="background-color:#999;">SignUp</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

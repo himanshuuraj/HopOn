@@ -1,0 +1,70 @@
+<!--
+  Generated template for the MainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Select</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid style="height:100%;padding:0;">
+    <ion-row style="margin-top:0%;">
+      <ion-col>
+        <button ion-button color="danger" (click)="moveToSearch('homeAddress');">
+          Home Address
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row style="height:15%;">
+        <ion-col style="height:100%;">
+          <div class="address">
+          {{homeAddress}}
+          </div>
+        </ion-col>
+    </ion-row>
+    <ion-row style="">
+      <ion-col style="height:100%;">
+        <button ion-button (click)="moveToPickUpTime('homeAddress');">
+          PickUp Time
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <input type="datetime"/>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:25%;">
+      <ion-col>
+        <button ion-button color="danger" (click)="moveToSearch('workAddress');">
+          Work Address
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row style="height:15%;">
+      <ion-col style="height:100%;">
+        <div class="address">{{workAddress}}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row style="">
+      <ion-col style="height:100%;">
+        <button ion-button (click)="moveToPickUpTime('workAddress');">
+          PickUp Time
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <input type="datetime"/>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

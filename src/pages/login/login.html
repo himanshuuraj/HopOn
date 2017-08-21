@@ -1,0 +1,47 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row style="position:relative;min-height:150px;height:auto;">
+      <div class="imageDiv" id="imageDiv" (click)="getImageFromGallery();">
+        <span id="spanUploadPhoto" *ngIf="!base64Image" style="display:block;margin-top: 60px;font-size: 18px;">Upload <br> Photo</span>
+        <img *ngIf="base64Image" [src]="base64Image"  style="width:100%;height:100%;border-radius:100%;"/>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item style="border-top:none;padding-left:0px;">
+            <ion-label floating text-center>First Name</ion-label>
+            <ion-input [(ngModel)]=firstName id="firstName"></ion-input>
+          </ion-item>
+          <ion-item style="padding-left:0px;">
+            <ion-label floating text-center>Last Name</ion-label>
+            <ion-input [(ngModel)]=lastName id="lastName"></ion-input>
+          </ion-item>
+          <ion-item style="border-top:none;padding-left:0px;">
+            <ion-label floating text-center>Phone Number</ion-label>
+            <ion-input [disabled]="flagToEdit" [(ngModel)]=phoneNumber type="tel" id="phoneNumber"></ion-input>
+          </ion-item>
+          <ion-item style="border-top:none;padding-left:0px;">
+            <ion-label floating text-center>Re-enter the phone number</ion-label>
+            <ion-input [disabled]="flagToEdit" type="tel" [(ngModel)]=reEnteredPhoneNumber></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin:auto;" *ngIf="flagToEdit == 0">
+      <ion-col col-1>
+        <ion-checkbox style="float:right;border-radius:20%;" [(ngModel)]="checkStatus" id="termsAndConditionsAcceptance">
+        </ion-checkbox>
+      </ion-col>
+      <ion-col style="font-size:15px;">
+        I accept the <span style="color:#999;" (click)="showModal();">terms and conditions</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button (click)="makejson()" ion-button full style="background-color:#999;">
+        <span *ngIf="flagToEdit == 0" style="text-transform:capitalize;">Create My Profile</span>
+        <span *ngIf="flagToEdit == 1" style="text-transform:capitalize;">Update</span>
+      </button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

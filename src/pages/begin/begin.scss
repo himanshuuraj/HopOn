@@ -1,0 +1,8 @@
+page-begin {
+  ion-content * , ion-grid *, ion-col *{
+      background: transparent;
+    }
+    input-has-focus {
+      color:black;
+    }
+}
